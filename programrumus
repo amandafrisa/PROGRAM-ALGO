@@ -1,0 +1,50 @@
+def hitung_daya_listrik(W,t):
+    P = W/t
+    return P #Changed F to P
+
+def hitung_usaha(P,t):
+    W = P * t
+    return W
+
+def hitung_waktu(W,P):
+    t = W / P
+    return t
+
+
+
+def main():
+    print("Program untuk menghitung Daya Listrik")
+    print("1: hitung daya listrik (P)")
+    print("2: hitung usaha (W)")
+    print("3: hitung waktu (t)")
+
+    pilihan = input("Masukkan pilihan 1/2/3:")
+
+    if pilihan == "1":
+       W = float(input("Masukkan usaha dalam J:"))
+       t = float(input("Masukkan waktu dalam s:"))
+       P = hitung_daya_listrik(W,t) #Changed k, y to W, t
+       print(f"Daya listriknya sebesar : {P: .2f} W")
+
+    elif pilihan == "2":
+       P = float(input("Masukkan nilai daya dalam W:"))
+       t = float(input("Masukkan nilai waktu dalam s:"))
+       W = hitung_usaha(P,t)
+       print(f"Usahanya sebesar : {W: .2f} J")
+
+    elif pilihan == "3":
+       P = float(input("Masukkan nilai daya listrik dalam W:"))
+       W = float(input("Masukkan usaha dalam J:"))
+       t = hitung_waktu(W,P)
+       print(f"Waktunya sebesar : {t: .2f} s")
+
+    elif pilihan == "4":
+       W = float(input("Masukkan usaha dalam J:"))
+       t = float(input("Masukkan nilai waktu dalam s:"))
+       print(f"Daya listriknya sebesar : {P: .2f} W")
+
+    else:
+       print(f"Pilihan tidak sesuai, silahkan pilih 1/2/3/4")
+
+if __name__ == "__main__":
+    main()
